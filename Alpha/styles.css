@@ -14,8 +14,23 @@ body {
     width: 80%;
     max-width: 600px;
     text-align: center;
-    box-shadow: 0 4px *px rgba(0, 0, 0, 0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
     background: #fff;
     padding: 20px;
     border-radius: 10px;
+}
+
+/* Gallery */
+.gallery {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    height: 300px;
+}
+
+.gallery img{
+    width: 100%;
+    height: auto;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
 }
