@@ -17,3 +17,14 @@ function showImage(index) {
     // Show the initial image
     showImage(currentIndex);
 }
+
+// Event listeners for navigation
+prevButton.addEventListener("click", () => {
+    currentIndex = (currentIndex -1 + images.length) % images.length;
+    showImage(currentIndex);
+});
+
+nextButton.addEventListener("click",() => {
+    currentIndex = (currentIndex + 1) % imagesq.length;
+    showImage(currentIndex);
+});
