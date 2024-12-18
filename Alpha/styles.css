@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/*  Gallery Container */
+.gallery-container {
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px *px rgba(0, 0, 0, 0);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
