@@ -1,30 +1,33 @@
-// Select elements
-
-const images = document.querySelectorAll(".gallery img");
+const galleryImages = document.querySelectorAll(".gallery img");
 const prevButton = document.getElementById("prev");
 const nextButton = document.getElementById("next");
 
 let currentIndex = 0;
 
-// Function to show the image based on the current index
-
-function showImage(index) {
-    // Remove active class from all images
-    images.forEach((img) => img.classList.remove("active"));
-    // Add active to the current image
-    images[index].classList.add("active");
-
-    // Show the initial image
-    showImage(currentIndex);
+// Function to update the gallery display
+function updateGallery(index) {
+    galleryImages.forEach((img, i) => {
+        if (i === index) {
+            img.classList.add("active");
+            img.classList.remove("hidden");
+        } else {
+            img.classList.add("hidden");
+            img.classList.remove("active");
+        }
+    });
 }
 
-// Event listeners for navigation
+// Event listener for the Previous button
 prevButton.addEventListener("click", () => {
-    currentIndex = (currentIndex -1 + images.length) % images.length;
-    showImage(currentIndex);
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    updateGallery(currentIndex);
 });
 
-nextButton.addEventListener("click",() => {
-    currentIndex = (currentIndex + 1) % imagesq.length;
-    showImage(currentIndex);
+// Event listener for the Next button
+nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    updateGallery(currentIndex);
 });
+
+// Initialize the gallery display
+updateGallery(currentIndex);
