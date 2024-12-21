@@ -35,6 +35,7 @@ body {
 .content-box p {
     line-height: 1.6;
     margin-bottom: 20px;
+    font-size: 1rem;
 }
 
 .history-section h2 {
@@ -60,7 +61,7 @@ body {
 /* Gallery Styling */
 .gallery-container {
     width: 90%;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 30px auto;
     text-align: center;
     background: #fff;
@@ -70,15 +71,17 @@ body {
 }
 
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
     justify-content: center;
 }
 
 .gallery img {
-    width: calc(33.33% - 10px);
+    width: 100%;
     height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: contain; /* Prevents cropping */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -116,12 +119,75 @@ body {
     display: none;
 }
 
-/* Show active image */
 .active {
     display: block;
-    width: 100%; /* Adjust width as needed */
+    width: 100%;
     height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* End Page Styling */
+.end-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5fadb; /* Light lemon background */
+    padding: 20px;
+}
+
+/* --- RESPONSIVENESS --- */
+
+/* Mobile Devices (up to 600px) */
+@media (max-width: 600px) {
+    .content-box h1 {
+        font-size: 2rem;
+    }
+
+    .content-box p {
+        font-size: 0.9rem;
+    }
+
+    .start-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .gallery img {
+        aspect-ratio: 16 / 9; /* Wider aspect ratio for small screens */
+    }
+
+    .gallery-container {
+        padding: 15px;
+    }
+}
+
+/* Tablets (up to 900px) */
+@media (max-width: 900px) {
+    .content-box h1 {
+        font-size: 2.2rem;
+    }
+
+    .content-box p {
+        font-size: 1rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Large Screens (above 1200px) */
+@media (min-width: 1200px) {
+    .content-box h1 {
+        font-size: 3rem;
+    }
+
+    .gallery-container {
+        padding: 30px;
+    }
 }
