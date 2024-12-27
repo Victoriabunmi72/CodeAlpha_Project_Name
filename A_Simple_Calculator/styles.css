@@ -1,47 +1,83 @@
+/* General styling */
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
+    background-color: #e3f2fd; /* Light blue background */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
+    color: #333;
 }
 
 .calculator {
-    background: #f5aaaa;
-    padding: 20px;
+    background-color: #0d1133; /* Light blue */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.041);
+    padding: 20px;
+    width: 320px; /* Ensure consistent width */
     text-align: center;
-    width: 300px;
+}
+
+/* Title styling */
+.calculator-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #bbc2cc; /* Dark blue */
+}
+
+/* Display styling */
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .display input {
-    width: 100%;
-    height: 50px;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    text-align: right;
-    border: none;
-    outline: none;
-    background: #f0f0f0;
-    border-radius: 5px;
-}
-
-.buttons button {
-    width: 60px;
-    height: 60px;
-    margin: 5px;
+    width: 100%; /* Ensure it spans the width of the calculator */
+    padding: 15px;
     font-size: 1.2rem;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    background: #007bff;
-    color: #fff;
-    transition: 0.3s;
+    background-color: #e3f2fd; /* Very light blue */
+    color: #0d47a1; /* Dark blue for text */
+    text-align: right;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none; /* Remove default focus outline */
 }
 
+/* Buttons styling */
+.buttons {
+    display: flex;
+    flex-wrap: wrap; /* Wrap buttons to fit within the calculator */
+    justify-content: space-between;
+}
+
+.buttons button {
+    width: 22%; /* Adjusted to fit properly in rows */
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #64b5f6; /* Medium blue */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect for buttons */
 .buttons button:hover {
-    background: #f5aaaa;
+    background-color: #033970; /* Darker blue */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Active effect for buttons */
+.buttons button:active {
+    background-color: #0d47a1; /* Even darker blue */
+    transform: scale(0.95); /* Pressed effect */
 }
