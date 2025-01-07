@@ -121,3 +121,136 @@
         display: block;
     }
 }
+
+/* Hero Section Styling */
+.featured-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 10%;
+    background: linear-gradient(to right, #4b6cb7, #182848);
+    color: white;
+    min-height: 100vh;
+    gap: 20px;
+}
+
+.featured-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.featured-text-card {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.featured-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.featured-name span {
+    color: #4b6cb7;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.featured-text-info {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #dcdcdc;
+}
+
+.featured-text-btn {
+    display: flex;
+    gap: 15px;
+}
+
+.featured-text-btn .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.featured-text-btn .btn.blue-btn {
+    background: #4b6cb7;
+    color: #fff;
+}
+
+.featured-text-btn .btn:hover {
+    background: #fff;
+    color: #4b6cb7;
+    box-shadow: 0 5px 15px rgba(75, 108, 183, 0.4);
+}
+
+.social_icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social_icons .icon {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social_icons .icon:hover {
+    color: #4b6cb7;
+}
+
+/* Featured Image Styling */
+.featured-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.featured-image .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll Icon */
+.scroll-icon-box {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.scroll-icon-box .scroll-btn {
+    text-decoration: none;
+    color: #dcdcdc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.scroll-icon-box .scroll-btn i {
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+.scroll-icon-box .scroll-btn p {
+    font-size: 0.9rem;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
