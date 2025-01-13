@@ -64,6 +64,43 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             window.open(this.href, '_blank');
         });
-    });
+    });  
     
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sendButton = document.querySelector(".form-button .btn");
+    const nameField = document.querySelector(".form-inputs input:nth-child(1)");
+    const emailField = document.querySelector(".form-inputs input:nth-child(2)");
+    const messageField = document.querySelector(".text-area textarea");
+
+    sendButton.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const name = nameField.value.trim();
+        const email = emailField.value.trim();
+        const message = messageField.value.trim();
+
+        if (!name || !email || !message) {
+            alert("Please fill out all fields before sending.");
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        alert(`Message Sent Successfully!\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
+
+        // Clear form fields
+        nameField.value = "";
+        emailField.value = "";
+        messageField.value = "";
+    });
+
+    function validateEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
 });
